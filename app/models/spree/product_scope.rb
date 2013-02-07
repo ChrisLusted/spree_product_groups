@@ -48,7 +48,7 @@ module Spree
                         Product.send(self.name.intern, *array)
                     end
       else
-        relation2 = Product.search({ self.name.intern => array.join("") }).relation
+        relation2 = Product.search({ self.name.intern => array.join("") }).result
       end
       unless another_scope.class == ActiveRecord::Relation
         another_scope = another_scope.send(:relation)
